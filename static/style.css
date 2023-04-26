@@ -1,0 +1,18 @@
+body {
+    background-color: #2e294e;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  

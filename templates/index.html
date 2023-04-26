@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Do I Need a Jacket?</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Do I Need a Jacket?</h1>
+      <form>
+        <input type="text" id="city" placeholder="Enter city name">
+        <button type="submit">Get temperature</button>
+      </form>
+      <div id="result"></div>
+    </div>
+    <script>
+      const form = document.querySelector('form');
+      const resultDiv = document.querySelector('#result');
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const city = document.querySelector('#city').value;
+        const url = `/weather?city=${city}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        const temperature = data.temperature;
+        resultDiv.innerText = `Current temperature in ${city}: ${temperature}°F`;
+      });
+    </script>
+  </body>
+</html>
