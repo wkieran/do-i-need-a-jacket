@@ -13,19 +13,9 @@
         <button type="submit">Get temperature</button>
       </form>
       <div id="result"></div>
+      <div id="error"></div>
+      <div id="temp"></div>
     </div>
-    <script>
-      const form = document.querySelector('form');
-      const resultDiv = document.querySelector('#result');
-      form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const city = document.querySelector('#city').value;
-        const url = `/weather?city=${city}`;
-        const response = await fetch(url);
-        const data = await response.json();
-        const temperature = data.temperature;
-        resultDiv.innerText = `Current temperature in ${city}: ${temperature}°F`;
-      });
-    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
   </body>
 </html>
