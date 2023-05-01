@@ -17,7 +17,7 @@ form.addEventListener('submit', async (event) => {
     if(temperature > 55){
       resultDiv.innerText = "No, you're good without one!"
     }else if(temperature >= 45){
-      resultDiv.innerText = "I mean, it wouldn't sure to grab one."
+      resultDiv.innerText = "I mean, it wouldn't hurt to grab one."
     }
     else{
       resultDiv.innerText = "Yes, don't forget a jacket."
